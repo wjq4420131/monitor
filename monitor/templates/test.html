@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<title>ajax</title>	
+	<script type="text/javascript" charset="utf-8" async defer></script>
+	<script src="../static/js/jquery-1.8.3.min.js"></script>
+	</head>
+
+<body>
+	<script>
+		jQuery.ajax({
+			url:"http://127.0.0.1:8080/details/1",
+			type:"post",
+			datatype:"jsonp",
+			// data:{group_id:1},
+			success:function(msg){
+				console.log(msg)
+				jQuery.JSON
+
+			}
+
+
+		})
+	</script>
+
+
+
+</body>
+</html>

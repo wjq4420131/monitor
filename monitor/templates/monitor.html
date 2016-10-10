@@ -1,0 +1,78 @@
+$def with(monitor_data)
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中心存储监控系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/add.css">
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/menu.js"></script>
+
+    <script language="JavaScript">
+
+    function myrefresh()
+    {
+        window.location.reload();
+    }
+
+    setTimeout('myrefresh()',600000); //指定10分钟刷新一次
+    </script>
+
+</head>
+
+
+
+<body>
+<div class="top"></div>
+<div id="header">
+    <div class="logo" align="center">中心存储监控系统</div>
+
+</div>
+<div id="content">
+    <div class="left_menu">
+        <ul id="nav_dot">
+            <li>
+
+                <h4 class="M2"><span></span>中心存储</h4>
+                <div class="list-item none">
+                    <a href='/'>监控页面</a>
+                </div>
+                <div class="list-item none">
+                    <a href='/list_group'>分组管理</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        <table width="" id="mytable" cellspacing="0">
+            <caption> </caption>
+            <tr>
+                <th scope="col">组名</th>
+                <th scope="col">服务器数量</th>
+                <th scope="col">严重告警</th>
+                <th scope="col">一般告警</th>
+                <th scope="col">详情</th>
+            </tr>
+            $for data in monitor_data:
+            <tr>
+                <td>$data['organ_name']</td>
+                <td>$data['device_count']</td>
+                <td><font size="3" color="red">$data['yanzhong']</font></td>
+                <td>$data['yiban']</td>
+                <td><a href="/details/$data['id']" target="_parent">查看</td>
+
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+<div class="bottom"></div>
+<div id="footer"><p>Copyright©  2016  四川天翼网络服务有限公司版权所有</p></div>
+<script>navList(12);</script>
+</body>
+</html>s
+

@@ -1,0 +1,58 @@
+$def with(listgroup)
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中心存储监控系统</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/index.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/add.css">
+    <script type="text/javascript" src="/static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/static/js/menu.js"></script>
+</head>
+
+<body>
+<div class="top"></div>
+<div id="header">
+    <div class="logo">中心存储监控系统</div>
+
+</div>
+<div id="content">
+    <div class="left_menu">
+        <ul id="nav_dot">
+            <li>
+
+                <h4 class="M2"><span></span>中心存储</h4>
+                <div class="list-item none">
+                    <a href='/'>监控页面</a>
+                </div>
+                <div class="list-item none">
+                    <a href='/list_group'>分组管理</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+<div>
+    <table width="" id="my_table" cellspacing="0">
+        <caption></caption>
+
+
+        <tr>
+            <th scope="col">分组名称</th>
+
+        </tr>
+        $for list in listgroup:
+        <tr>
+            <td>$list['group_name']</td>
+        </tr>
+    </table>
+</div>
+
+</div>
+<div class="bottom"></div>
+<div id="footer"><p>Copyright©  2016  四川天翼网络服务有限公司版权所有</p></div>
+<script>navList(12);</script>
+</body>
+</html>
